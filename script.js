@@ -3,12 +3,7 @@
 }*/
 
 function showMessage(sectionId, text) {
-  const output = document.querySelector(sectionId + " .output");
-  if (output) {
-    output.innerHTML += text + "<br>";
-  } else {
-    console.warn("Section not found:", sectionId);
-  }
+  console.log(`[${sectionId}] ${text}`);
 }
 
 
