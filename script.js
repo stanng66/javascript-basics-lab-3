@@ -3,8 +3,14 @@
 }*/
 
 function showMessage(sectionId, text) {
-  document.querySelector(sectionId + " .output").innerHTML += text + "<br>";
+  const output = document.querySelector(sectionId + " .output");
+  if (output) {
+    output.innerHTML += text + "<br>";
+  } else {
+    console.warn("Section not found:", sectionId);
+  }
 }
+
 
 
 // =================================
@@ -55,7 +61,7 @@ switch (day) {
         showMessage("#step3", "Day: " + day + "Saturday");
         break;
     case 7:
-        showMessage("#tep3", "Day: " + day + "Sunday");
+        showMessage("#step3", "Day: " + day + "Sunday");
         break;
     
     default:
