@@ -1,3 +1,12 @@
+/*function showMessage(text) { // Original function
+  document.getElementById("output").innerHTML += text + "<br>";
+}*/
+
+function showMessage(sectionId, text) {
+  document.querySelector(sectionId + " .output").innerHTML += text + "<br>";
+}
+
+
 // =================================
 // Step 2: If-else Condition
 // =================================
@@ -6,7 +15,15 @@
 // Hint: Add else if (number < 0) for negatives.
 // Hint: Use else for zero.
 
+let number = 69; 
 
+if (number > 0) {
+    showMessage("#step2", "Number: " + number + " → This is a positive number."); 
+} else if (number < 0) {
+    showMessage("#step2", "Number: " + number + "This is a negative number.");
+} else {
+    showMessage("#step2", "Number: " + number + "This number is zero.");
+}
 
 
 
@@ -16,7 +33,34 @@
 // Create a program that takes a number (1 to 7) and prints the corresponding day of the week.
 // Hint: Use a switch statement with case blocks to match the number with the day.
 
+let day = -1; 
 
+switch (day) {
+    case 1:
+        showMessage("#step3", "Day: " + day + " → Monday");
+        break;
+    case 2:
+        showMessage("#step3", "Day: " + day + " → Tuesday");
+        break;
+    case 3:
+        showMessage("#step3", "Day: " + day + " → Wednesday");
+        break;
+    case 4:
+        showMessage("#step3", "Day: " + day + " → Thursday");
+        break;
+    case 5:
+        showMessage("#step3", "Day: " + day + "Friday");
+        break;
+    case 6:
+        showMessage("#step3", "Day: " + day + "Saturday");
+        break;
+    case 7:
+        showMessage("#tep3", "Day: " + day + "Sunday");
+        break;
+    
+    default:
+        showMessage("#step3", "Day: " + day + " *Please enter a number between 1 and 7*");
+}
 
 
 
@@ -26,27 +70,29 @@
 // Practice using loops to print numbers from 1 to 5. Implement this using for, while, and do...while loops.
 
 // For Loop Hint:
-for (let i = 1; i <= 5; i++) {
-    // Print i
+for (let a = 0; a <= 4; a++) {
+    showMessage("#step4", "For Loop: " + a); // Print i
 }
-
+   
 
 
 // While Loop Hint:
-let i = 1;
+a = 0
  
-while (i <= 5) { 
-// Print i and increment
-﻿ }
+while (a <= 4) { 
+    showMessage("#step4", "While Loop: " + a); // Print i and increment
+    a++;
+﻿ } 
 
 
 
 // Do...While Loop Hint:
-let j = 1; 
+let c = 0; 
  
 do {
- // Print j j++; 
-﻿} while (j <= 5);
+    showMessage("#step4", "Do...While Loop: " + c); // Print j j++;
+    c++;
+﻿} while (c <= 4); 
 
 
 
@@ -58,16 +104,22 @@ do {
 // Modify your loop to stop when it reaches the number 3 using break. Try skipping the number 3 with continue.
 
 // Break hint:
-/*if (i === <addNumber>) {
-  // Use Break here
-}*/
+for (let d = 0; d <= 9; d++) {
+    if (d === 3) {
+        break; // Use Break here
+    }
+    showMessage("#step5", "Break the loop at " + d);
+}
 
 
 
 // Continue hint:
-/*if (i === <addNumber>) {
-    //Use continue here
-} */
+for (let e = 0; e <= 9; e++) {
+    if (e === 3) {
+        continue; // Use Continue here
+    } 
+     showMessage("#step5", "Continue the loop at " + e);
+}
 
 
 
@@ -81,13 +133,20 @@ do {
 
 
 // Code Hint:
-let globalVar = "I'm global!";
+let globalVar = "This is a global scope.";
+
+function accessGlobal() {
+    showMessage("#step6", globalVar); 
+}
  
-function scopeExample() {
-    let localVar = "I'm local!";
-    // Access globalVar and localVar inside the function
+
+function localscopeExample() {
+    let localVar = "This is a local scope.";
+    showMessage("#step6", localVar); 
 }
 
+accessGlobal();
+localscopeExample();
 
 
 
